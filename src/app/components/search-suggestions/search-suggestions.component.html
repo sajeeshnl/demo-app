@@ -1,0 +1,21 @@
+<ng-container *ngIf="searchSuggestions.length === 0">
+    Try searching for people, topics, or keywords
+</ng-container>
+<ng-container *ngIf="searchSuggestions.length !== 0">
+    <div *ngFor="let messageDetails of searchSuggestions" class="app-suggestions">
+        <app-profile-image [imageUrl]="messageDetails.image_url" [imageSize]="60">
+        </app-profile-image>
+        <div class="app-suggestions__detail">
+            {{messageDetails.title}}
+            <div class="app-suggestions__author">
+                By {{messageDetails.author}}
+            </div>
+        </div>
+        <div class="app-suggestions__date">
+            On {{messageDetails.created_at | date:'medium'}}
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="showLoadMore">
+    <button (click)="loadMoreMessages()">Load more ...</button>
+</ng-container>

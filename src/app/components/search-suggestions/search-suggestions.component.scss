@@ -1,0 +1,23 @@
+.app-suggestions {
+    border-bottom: 3px solid #ece1e1;
+    display: flex;
+    padding: 15px;
+
+    &__detail {
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        padding-left: 10px;
+    }
+
+    &__date {
+        padding-left: 30px;
+    }
+
+    &__author {
+        font-size: 14px;
+        color: #536471;
+        font-weight: 500;
+        padding-top: 10px;
+    }
+}

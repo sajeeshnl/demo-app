@@ -1,0 +1,13 @@
+<div class="app-search">
+    <div class="icon-search"></div>
+    <input class="app-search__input"
+    [formControl]="searchInput"
+    [placeholder]="'Search here'"
+    (focus)="onFocus()"
+    (blur)="onBlur()">
+</div>
+
+<div class="app-search__container" *ngIf="isSearchActive" [@searchResultAnimation]
+    [ngClass]="{'app-search__empty-height': searchInput.value === '' || isCompleteDataLoaded}">
+    <app-search-suggestions (completeDataLoaded)="completeDataLoaded($event)" [searchKey]="searchInput.value"></app-search-suggestions>
+</div>
